@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Контакты — Покой. Память</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html"><span>Покой. Память</span></a>
+            <nav class="nav">
+                <a href="services.html">Услуги</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html" class="active">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page contact-page">
+        <h1>Связаться с нами</h1>
+        <div class="contact-grid">
+            <div>
+                <h3>Телефон / WhatsApp</h3>
+                <p><a href="https://wa.me/+77071110569">+77071110569</a> (круглосуточно)</p>
+                <p> <a href="https://wa.me/+77078857105">+77078857105</a>
+                </p>
+                <p>г Талдыкорган, ул. Примерная, 1</p>
+
+                <h3>Часы работы</h3>
+                <p>24/7 — выезд и поддержка</p>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Спасибо — мы свяжемся с вами. (Замените alert на интеграцию с вашим backend)')">
+                <label>Имя<input name="name" required></label>
+                <label>Телефон<input name="phone" required></label>
+                <label>Сообщение<textarea name="message" rows="5"></textarea></label>
+                <button class="btn btn-primary" type="submit">Отправить</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year-4"></span> Покой. Память</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year-4').textContent = new Date().getFullYear();
+    </script>
+</body>
+<style>:root{
+  --bg:#0b0c0d;
+  --panel:#0f1113;
+  --muted:#9da4ab;
+  --accent:#9ad1ff;
+  --accent-2:#ffd9b3;
+  --glass: rgba(255,255,255,0.04);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --max-width:1200px;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#060607 0%,#0b0c0d 60%);
+  color:#eaf2ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+/* Header */
+.site-header{position:sticky;top:0;backdrop-filter:blur(6px);z-index:80;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.12))}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-weight:700;color:var(--accent);text-decoration:none}
+.nav a{color:var(--muted);margin-left:16px;text-decoration:none}
+.nav a.active{color:var(--accent);font-weight:600}
+.header-action{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 12px;border-radius:8px;color:#04101a;text-decoration:none;font-weight:700}
+
+/* HERO */
+.hero{position:relative;min-height:520px;overflow:hidden;display:flex;align-items:center}
+.angel-bg{
+  position:absolute;inset:0;
+  background: url("../img/angel.png") center center no-repeat;
+  background-size:cover;
+  opacity:0.12;
+  filter:blur(0.8px);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:2;text-align:center;padding:48px 20px}
+.hero h1{font-size:44px;margin:0 0 12px}
+.hero .lead{color:var(--muted);max-width:820px;margin:0 auto 18px}
+.hero-cta{display:flex;gap:12px;justify-content:center}
+
+/* Cards / quick info */
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-40px;position:relative;z-index:3}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Services grid */
+.services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+.service-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Product grid */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;color:inherit;background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04101a;border:0}
+.btn-ghost{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04)}
+
+/* Forms */
+.contact-form label{display:block;margin-bottom:12px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+
+/* Footer */
+.site-footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* WhatsApp FAB */
+.whatsapp-fab{position:fixed;right:18px;bottom:110px;background:linear-gradient(180deg,#25D366,#128C7E);color:white;padding:12px;border-radius:50%;z-index:120;text-decoration:none;display:flex;align-items:center;justify-content:center}
+
+/* MEMORIAL RIBBON (FRONT) */
+.memorial-ribbon{position:fixed;left:0;bottom:0;width:100%;height:88px;background:rgba(0,0,0,0.96);display:flex;align-items:center;overflow:hidden;z-index:9999;border-top:2px solid rgba(255,255,255,0.04);pointer-events:none}
+.memorial-track{display:flex;gap:60px;padding-left:50%;animation:ribbonMove 20s linear infinite}
+.memorial-track span{color:#fff;font-weight:700;letter-spacing:3px;font-size:20px;text-transform:uppercase;white-space:nowrap}
+@keyframes ribbonMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Responsive */
+@media (max-width:1100px){.quick{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}.services-list{grid-template-columns:1fr}}
+@media (max-width:640px){.hero h1{font-size:26px}.quick{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr}.memorial-track{padding-left:20%}}
+</style>
+</html>
